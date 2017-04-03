@@ -1,0 +1,87 @@
+
+   <div ng-show="!showcv"> 
+    <form name="formone" role="form">
+        <table class="table table-bordered">
+            <h3 class="text-center">Cirruculum Vitae form</h3><tr><td>
+           <input class="form-control" name="fname" required type="text" placeholder="firstname" ng-model="cv.fname" ng-minlength="5"
+       ng-maxlength="15" />
+           <span class="alert alert-warning form-control" ng-show="formone.fname.$dirty && formone.fname.$error.required">firstname is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="formone.fname.$dirty && formone.fname.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="formone.fname.$dirty && formone.fname.$error.maxlength">too long</span>
+            </td><td>
+       <input class="form-control" name="lname" required type="text" placeholder="lastname" ng-model="cv.lname" ng-minlength="3"
+              ng-maxlength="15">
+        <span class="alert alert-warning form-control" ng-show="formone.lname.$dirty && formone.lname.$error.required">lastname is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="formone.lname.$dirty && formone.lname.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="formone.lname.$dirty && formone.lname.$error.maxlength">too long</span>
+    </td></tr><tr><td>
+        <select class="form-control" required name="gender" ng-model="cv.gender">
+             <option value="">please select gender</option>
+              <option value="male">male</option>
+               <option value="female">female</option>
+</select>
+        <span class="alert alert-warning form-control" ng-show="formone.gender.$dirty && formone.gender.$error.required">please gender
+           </span>
+            </td><td>
+        <input class="form-control" type="email" name="email" required placeholder="contact email" ng-model="cv.email" >
+        <span class="alert alert-warning form-control" ng-show="formone.email.$dirty && formone.email.$error.required">email is mandatory
+           </span>
+        <span class="alert alert-warning form-control" ng-show="formone.email.$dirty && formone.email.$error.email">make sure is correct mail</span>
+        </td></tr><tr><td>
+        <textarea class="form-control" name="skill" required placeholder="skill description" ng-model="cv.Sdes"
+                  ng-minlength="10" ng-maxlength="100"></textarea>
+         <span class="alert alert-warning form-control" ng-show="formone.skill.$dirty && formone.skill.$error.required">your skill is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="formone.skill.$dirty && formone.skill.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="formone.skill.$dirty && formone.skill.$error.maxlength">too long</span>
+            </td><td>
+        <textarea class="form-control" name="exp" required placeholder="experince description" ng-model="cv.Edes"
+                  ng-minlength="10" ng-maxlength="50"></textarea>
+        <span class="alert alert-warning form-control" ng-show="formone.exp.$dirty && formone.exp.$error.required">your experince is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="formone.exp.$dirty && formone.exp.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="formone.exp.$dirty && formone.exp.$error.maxlength">too long</span>
+            </td></tr><tr><td>
+        <select class="form-control" required name="education" ng-model="cv.education"
+                ng-options="edu as edu for edu in education">
+             <option value="">please select education field</option>
+              
+               
+</select>
+        <span class="alert alert-warning form-control" ng-show="formone.education.$dirty && formone.education.$error.required">please choose your proffesion
+           </span>
+            </td><td>
+         <select class="form-control" required name="district" ng-model="cv.district"
+                 ng-options="dis as dis for dis in districts">
+             <option value="">please select district</option>
+              
+               
+</select>
+        <span class="alert alert-warning form-control" ng-show="formone.district.$dirty && formone.district.$error.required">please choose your district
+           </span>
+        </td></tr><tr><td>
+         <select class="form-control" required name="qulifi" ng-model="cv.qulification"
+                 ng-options="qulification as qulification for qulification in qulification">
+              <option value="">please select qulification</option>
+              
+               
+</select>
+        <span class="alert alert-warning form-control" ng-show="formone.qulifi.$dirty && formone.qulifi.$error.required">please choose your district
+           </span>
+            </td><td>
+        <button type="submit" ng-click="cvcreate()" ng-disabled="formone.$invalid" class="btn btn-success form-control">Submit</button>
+            </td></tr>
+        </table>
+    </form>
+</div>
+
+<div ng-show="showcv">
+    
+    <div class="alert alert-success block" role="alert">
+        <h3 class="text-center">you successfully create your CV</h3>
+       <p class="text-center"><a class="link" ui-sref="dashboard.cvview">click to view your cv</a></p>
+    </div>
+
+</div>

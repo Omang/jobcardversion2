@@ -1,0 +1,27 @@
+<div>
+<div ng-show="cvshow">
+        <dt>Firstname:</dt>
+        <dd>{{cvdata.firstName}}</dd>
+        <dt>Lastname:</dt>
+        <dd>{{cvdata.lastName}}</dd>
+        <dt>Gender:</dt>
+        <dd>{{cvdata.gender}}</dd>
+        <dt>Contacts:</dt>
+        <dd>{{cvdata.email}}</dd>
+        <dt>Location:</dt>
+        <dd>{{cvdata.district}} District</dd>
+        <dt>Education:</dt>
+        <dd>{{cvdata.proffesion}} in {{cvdata.education}}</dd>
+        <dt>Skills:</dt>
+        <dd>{{cvdata.skilldes}}</dd>
+        <dt>Experince:</dt>
+        <dd>{{cvdata.expedes}}</dd>
+    <button class="btn btn-default btn-block" ng-click="editprofile()"><span class="glyphicon glyphicon-edit"></span>edit profile</button> 
+</div>
+
+<div ng-show="!cvshow">
+  <form name="formone" role="form">
+      <input type="text" required name="title" class="form-control" ng-model="fname">
+    </form>
+</div>
+</div>

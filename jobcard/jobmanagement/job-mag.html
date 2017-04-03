@@ -1,0 +1,20 @@
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <h3 class="text-center" ng-model="job_id"><span class="glyphicon glyphicon-folder-open"></span> dropped CVs</h3>
+    <br>
+    
+   <div dir-paginate="applys in stuffout | itemsPerPage:3">
+       
+    <div show-card applycard="applys" jobid="job_id" dirdata="job_id"></div>
+    
+ </div>
+    <dir-pagination-controls
+    max-size="3"
+    direction-links="true"
+    boundary-links="true" >
+    </dir-pagination-controls>
+</div>
+<div class="col-md-6 col-sm-6 col=xs-12">
+    <br>
+    <h3 class="text-center"><span class="glyphicon glyphicon-briefcase"></span></h3>
+    <div cv-review reviewdata="somestuff" items="othersomething" dirdata="job_id" ></div>
+</div>

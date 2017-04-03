@@ -1,0 +1,93 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'angular-pagesslide-directive' ]
+2 info using npm@2.15.9
+3 info using node@v4.5.0
+4 verbose install initial load of C:\projects\gamehub\package.json
+5 warn package.json TimeSucks@0.0.1 No description
+6 warn package.json TimeSucks@0.0.1 No repository field.
+7 warn package.json TimeSucks@0.0.1 No README data
+8 warn package.json TimeSucks@0.0.1 No license field.
+9 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\angular\package.json
+10 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\angular-chart.js\package.json
+11 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\angular-ui-router\package.json
+12 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\angular-utils-pagination\package.json
+13 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\body-parser\package.json
+14 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\bootstrap\package.json
+15 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\chart.js\package.json
+16 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\connect-multiparty\package.json
+17 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\express\package.json
+18 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\express-jwt\package.json
+19 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\fs-extra\package.json
+20 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\i\package.json
+21 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\jquery\package.json
+22 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\jsonwebtoken\package.json
+23 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\mongoose\package.json
+24 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\ng-audio\package.json
+25 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\ng-file-upload\package.json
+26 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\passport\package.json
+27 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\passport-local\package.json
+28 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\path\package.json
+29 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\slideout\package.json
+30 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\socket.io\package.json
+31 verbose installManyTop reading scoped package data from C:\projects\gamehub\node_modules\youtube-audio-stream\package.json
+32 info package.json express-jwt@5.1.0 No license field.
+33 info package.json i@0.3.5 No license field.
+34 info package.json ng-audio@0.0.2 No license field.
+35 info package.json passport-local@1.0.0 No license field.
+36 info package.json path@0.12.7 path is also the name of a node core module.
+37 verbose readDependencies loading dependencies from C:\projects\gamehub\package.json
+38 silly cache add args [ 'angular-pagesslide-directive', null ]
+39 verbose cache add spec angular-pagesslide-directive
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'angular-pagesslide-directive',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'angular-pagesslide-directive',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: 'latest',
+40 silly cache add   type: 'tag' }
+41 silly addNamed angular-pagesslide-directive@latest
+42 verbose addNamed "latest" is being treated as a dist-tag for angular-pagesslide-directive
+43 info addNameTag [ 'angular-pagesslide-directive', 'latest' ]
+44 silly mapToRegistry name angular-pagesslide-directive
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'angular-pagesslide-directive',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   name: 'angular-pagesslide-directive',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri https://registry.npmjs.org/angular-pagesslide-directive
+49 verbose addNameTag registry:https://registry.npmjs.org/angular-pagesslide-directive not in flight; fetching
+50 verbose request uri https://registry.npmjs.org/angular-pagesslide-directive
+51 verbose request no auth needed
+52 info attempt registry request try #1 at 4:31:28 PM
+53 verbose request id 69ce5fd1d8477fcd
+54 http request GET https://registry.npmjs.org/angular-pagesslide-directive
+55 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+56 info attempt registry request try #2 at 4:31:38 PM
+57 http request GET https://registry.npmjs.org/angular-pagesslide-directive
+58 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+59 info attempt registry request try #3 at 4:32:38 PM
+60 http request GET https://registry.npmjs.org/angular-pagesslide-directive
+61 verbose stack Error: getaddrinfo ENOENT registry.npmjs.org:443
+61 verbose stack     at Object.exports._errnoException (util.js:907:11)
+61 verbose stack     at errnoException (dns.js:32:15)
+61 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:78:26)
+62 verbose cwd C:\projects\gamehub
+63 error Windows_NT 6.1.7600
+64 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "angular-pagesslide-directive"
+65 error node v4.5.0
+66 error npm  v2.15.9
+67 error code ENOENT
+68 error errno ENOENT
+69 error syscall getaddrinfo
+70 error enoent getaddrinfo ENOENT registry.npmjs.org:443
+70 error enoent This is most likely not a problem with npm itself
+70 error enoent and is related to npm not being able to find a file.
+71 verbose exit [ 1, true ]

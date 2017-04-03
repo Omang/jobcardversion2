@@ -1,0 +1,27 @@
+<div class="col-md-6 col-sm-6 col-xs-12" style="background-color: gainsboro; padding-top: 10px;">
+    
+        <h3 class="text-center" ng-model="cvdata">Cv</h3>
+    <dl class="dl-horizontal">
+    <div all-cv cvdata="cvdata"></div> 
+    </dl>
+     <ul class="list-group" ng-show="newdash">
+         <li class="list-group-item alert-warning">
+             <span class="badge">{{difference}}</span>
+             <strong> job management application</strong>
+             <a class="link" ui-sref="dashboard.applydash">click here to manage</a>
+         </li>
+    </ul> 
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12" style="padding-top: 10px;">
+<div ng-model="userid"></div>
+<input class="form-control" ng-model="search" placeholder="Search for jobs" >
+<br><div dir-paginate="all in alljobs | itemsPerPage:3|filter:search">
+    <div all-job jobdata="all" userid="userid"></div>
+    
+ </div>
+    <dir-pagination-controls
+    max-size="3"
+    direction-links="true"
+    boundary-links="true" >
+    </dir-pagination-controls>
+</div> 

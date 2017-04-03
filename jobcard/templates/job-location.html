@@ -1,0 +1,25 @@
+
+<div class="col-md-6 col-sm-12 col-xs-12">
+<p class="text-center"><span class="glyphicon glyphicon-asterisk" style="font-size: 2em"></span>your job cards</p>
+    <div ng-repeat="all in jobcards">
+    <div add-job job="all"></div>
+        
+ </div>
+    
+    
+    </div>
+<div class="col-md-6 col-sm-12 col-xs-12">
+   <div class="col-md-8 col-sm-12">
+       <h3 class="text-center">Card Stats</h3>
+       <div style="padding-left: 5px;">
+      <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+       </canvas>
+           </div>
+    </div> 
+   
+   <div><br>
+       <button type="button" class="btn btn-default form-control" ui-sref="dashboard.jobmanagement"><strong>Job</strong>management<strong>board</strong></button>
+       
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+<div class="col-md-4 col-md-offset-4 col-sm-6">
+    <form name="reg" role="form">
+    <table class="table table-bordered">
+        <thead>
+            <h4 class="text-center"><strong>registration form</strong></h4>
+        </thead>
+        <tr>
+            <td><input class="form-control" name="username" required type="text" ng-model="username" placeholder="username" 
+                       ng-minlength="5" ng-maxlength="20"/>
+            <span class="alert alert-warning form-control" ng-show="reg.username.$dirty && reg.username.$error.required">username is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="reg.username.$dirty && reg.username.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="reg.username.$dirty && reg.username.$error.maxlength">too long</span></td>
+        </tr>
+        <tr>
+            <td><input class="form-control" name="password" required type="password" ng-model="password" placeholder="password"
+                       ng-minlength="5" ng-maxlength="14"/>
+            <span class="alert alert-warning form-control" ng-show="reg.password.$dirty && reg.password.$error.required">username is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="reg.password.$dirty && reg.password.$error.minlength">too short</span><span class="alert alert-warning form-control" ng-show="reg.password.$dirty && reg.password.$error.maxlength">too long</span>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="form-control" name="email" type="email" required ng-model="email" placeholder="email" />
+            <span class="alert alert-warning form-control" ng-show="reg.email.$dirty && reg.email.$error.email">make sure is valid email</span><span class="alert alert-warning form-control" ng-show="reg.email.$dirty && reg.email.$error.required">email needed</span></td>
+        </tr>
+        <tr>
+            <td><button ng-disabled="reg.$invalid" type="button" class="btn btn-success form-control" ng-click="registerUser()">register</button>
+            </td>
+        </tr>
+        <tr>
+            <td><strong><a ui-sref="login">go back</a></strong>
+            </td>
+        </tr>
+    </table>
+</div>

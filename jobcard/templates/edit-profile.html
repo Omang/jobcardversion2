@@ -1,0 +1,22 @@
+<form name="profile" role="form">
+<table class="table table-bordered">
+    <thead><h3 class="text-center">profile edition zone</h3></thead>
+    <tr>
+        <td><div class="btn btn-warning form-control" required name="file" ngf-select ng-model="file" name="file"  ngf-pattern="'image/*'"
+    ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+    ngf-resize="{width: 100, height: 100}"><h5>select profile picture</h5></div>
+        </td>
+    </tr>
+    <tr>
+        <td><textarea class="form-control" name="bio" ng-model="bio" placeholder="your bio or business description"
+        required ng-minlength="10" ng-maxlength="100"></textarea>
+    <span class="alert alert-warning form-control" ng-show="profile.bio.$dirty && profile.bio.$error.required">bio is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="profile.bio.$dirty && profile.bio.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="profile.bio.$dirty && profile.bio.$error.maxlength">too long</span></td>
+    </tr>
+    <tr>
+        <td><button ng-disabled="profile.$invalid" ng-click="updateprofile()" class="btn btn-success form-control">update</button></td>
+    </tr>
+</table>
+</form>

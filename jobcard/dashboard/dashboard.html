@@ -1,0 +1,22 @@
+<div class="col-md-3 col-sm-6 col-xs-12" ng-show="loggedIn" id="sp-nav">
+    <i class="glyphicon glyphicon-dashboard"></i>
+ <nav>
+    <ul class="nav nav-pills nav-stacked">
+        <button class="btn btn-sm btn-primary" ng-click="$spMenu.toggle()">Menu</button><br>
+        <li><a ng-show="!cards" ui-sref="dashboard.jobcard"><span style="font-size: 3em;" class="glyphicon glyphicon-book"></span>create jobcard</a></li>
+        <li class="navitems"><a ng-hide="tas" ui-sref="dashboard.cv"><span style="font-size: 3em;" class="glyphicon glyphicon-education"></span>create CV</a>
+        
+        <a ng-show="tas" ui-sref="dashboard.cvview"><span style="font-size: 3em;" class="glyphicon glyphicon-user"></span>Self Management</a> 
+            
+        <a ng-show="cards" ui-sref="dashboard.jobview"><span style="font-size: 3em;" class="glyphicon glyphicon-book"></span>jobcards Management</a>
+            
+        </li>
+        <li class="navitems"><a ng-show="data" ui-sref="dashboard.profile"><span style="font-size: 3em;" class="glyphicon glyphicon-cog"></span>{{username}}Edit</a>
+        <a ng-show="!data" ng-show="data" ui-sref="dashboard.updateprofile"><img ngf-resize="{width: 50, height: 50}" class="thumbnail" ng-src="{{profileimg}}">Update profile</a></li>
+        <li class="navitems"><a ng-click="logout()"><span style="font-size: 3em;" class="glyphicon glyphicon-log-out"></span>log out</a></li>
+     </ul>
+    </nav>
+</div>
+<div class="col-md-9 col-sm-6 col-xs-12" style="background-color: aliceblue;" id="sp-page">
+    <div ui-view></div>
+</div>

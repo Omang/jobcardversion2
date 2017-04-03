@@ -1,0 +1,27 @@
+<div>
+    <table class="table table-bordered">
+        <th>Name</th>
+        <th>Gender</th>
+        <tr>
+            <td>{{applycard.fname}}</td>
+            <td>{{applycard.gender}}</td>
+        </tr>
+        <tr>
+            <td> <span uib-dropdown on-toggle="toggled(open)">
+      <a href id="simple-dropdown" uib-dropdown-toggle>
+        view more
+      </a>
+      <div class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+          <p><strong>experince:</strong> {{applycard.experince}}</p>
+          <p><strong>skills:</strong> {{applycard.skill}}</p>
+                </div>
+    </span>
+               </td>
+            <td>
+                <button ng-show="!savedcv" class="btn btn-sm btn-warning" ng-click="deletecv()">reject cv</button>
+                <button ng-show="!savedcv" class="btn btn-sm btn-warning" ng-click="cvSave()">save for late review</button>
+                <button ng-show="savedcv" class="btn btn-sm btn-danger" ng-click="cvClose()">added for late review CLOSE</button>
+            </td>
+        </tr>
+    </table>
+</div>

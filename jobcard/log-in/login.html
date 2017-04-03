@@ -1,0 +1,28 @@
+<div class="col-md-4 col-md-offset-4 col-sm-6">
+    <form name="log" role="form">
+    <table class="table table-bordered">
+        <thead>
+            <h4 class="text-center"><strong>log in</strong></h4>
+        </thead>
+        <tr>
+            <td><input class="form-control" required type="text" ng-model="username" placeholder="username" />
+                <span class="alert alert-warning form-control" ng-show="log.username.$dirty && log.username.$error.required">username is needed
+           </span>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="form-control" required type="password" ng-model="password" placeholder="password" />
+            <span class="alert alert-warning form-control" ng-show="log.password.$dirty && log.password.$error.required">username is mandatory
+           </span></td>
+        </tr>
+        <tr>
+            <td><button ng-disabled="log.$invalid" type="button" class="btn btn-success form-control" ng-click="logUser()">login</button>
+            </td>
+        </tr>
+        <tr>
+            <td><strong><a ui-sref="register">create an account</a></strong>
+            </td>
+        </tr>
+    </table>
+    </form>
+</div>

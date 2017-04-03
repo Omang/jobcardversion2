@@ -1,0 +1,53 @@
+
+<form name="cvform" role="form">
+    <h3 class="text-center">job creation form</h3>
+    <table class="table table-bordered">
+        <tr><td>
+    <input type="text" required name="title" class="form-control" placeholder="job title" ng-model="job.title"
+           ng-minlength="5" ng-maxlength="20">
+    <span class="alert alert-warning form-control" ng-show="cvform.title.$dirty && cvform.title.$error.required">Job title is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="cvform.title.$dirty && cvform.title.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="cvform.title.$dirty && cvform.title.$error.maxlength">too long</span>
+            </td>
+    </tr><tr><td>
+    <select class="form-control" name="education" ng-model="job.qulification"
+            ng-options="quli as quli for quli in qulification">
+              <option value="">please select qulification</option>
+               
+</select></td></tr><tr><td>
+    <textarea name="jobdes" class="form-control" placeholder="job description"
+              ng-model="job.stuff" required ng-minlength="10" ng-maxlength="100"></textarea>
+    <span class="alert alert-warning form-control" ng-show="cvform.jobdes.$dirty && cvform.jobdes.$error.required">Job description is mandatory
+           </span>
+           <span class="alert alert-warning form-control" ng-show="cvform.jobdes.$dirty && cvform.jobdes.$error.minlength">too short</span>
+        <span class="alert alert-warning form-control" ng-show="cvform.jobdes.$dirty && cvform.jobdes.$error.maxlength">too long</span></td></tr>
+    <tr><td>
+<label>closing date</label>
+    <input required type="date" name="thiswatch" ng-model="job.datemow" class="form-control" placeholder="closing date">
+    <span class="alert alert-warning form-control" ng-show="cvform.thiswatch.$error.required">
+         Required! date should not be today or previous dates</span>
+    <span class="alert alert-warning form-control" ng-show="cvform.thiswatch.$error.date">
+         Not a valid date!</span>
+   </td></tr><tr><td> 
+<select required class="form-control" name="education" ng-model="job.education"
+        ng-options="edu as edu for edu in education">
+               <option value="">please select category</option>
+               
+</select></td></tr><tr><td>
+    
+
+            <select required class="form-control" name="education" ng-model="job.district"
+                    ng-options="dis as dis for dis in districts">
+                 <option value="">please select district</option>
+               
+</select></td></tr><tr><td>
+    
+        
+<button type="submit" ng-click="createjob()" ng-disabled="cvform.$invalid" class="btn btn-success form-control">create</button>
+        </td></tr>
+</table>
+</form>
+    
+
+

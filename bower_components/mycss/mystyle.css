@@ -1,0 +1,76 @@
+.glyphicon-dashboard {
+    font-size: 3em;
+    color: blue;
+    cursor: pointer;
+    z-index: 1000000;
+    opacity: 0;
+}
+.leftnav {
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+.glyphicon-edit {
+    font-size: 2em;
+    opacity: 0.7;
+}
+.glyphicon-remove-circle{
+    right: 10px;
+    top:10px;
+    opacity: 0.7;
+    cursor: pointer;
+    position: absolute;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+.glyphicon-remove-circle:hover{
+    opacity: 1;
+    color: red;
+}
+.navitems {
+   transition: all 0.3s ease-in-out; 
+}
+.hide_menu {
+    margin-left: -250px;
+}
+.opacity_one {
+    opacity: 1;
+     transition: all 0.3s ease-in-out;
+}
+.glyphicon-thumbs-up {
+    font-size: 1.5em;
+    opacity: 0.7;
+    cursor: pointer;
+    
+}
+.glyphicon-cloud-download{
+    font-size: 1.5em;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.glyphicon-cloud-share{
+    
+    font-size: 1.5em;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.headman {
+    padding-left: 5px;
+}
+.linkx {
+    padding-left: 5px;
+}
+
+.linky {
+    padding-left: 120px;
+}
+.glyphicon-save-file{
+    
+    font-size: 1.5em;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.linkz {
+    padding-left: 125px;
+    
+}
