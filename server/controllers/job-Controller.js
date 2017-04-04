@@ -186,7 +186,7 @@ module.exports.cvReview = function(req, res){
                     if(user == cvbox[j].userid){
                         var review = cvbox[j].review;
                         var reviewdata = "waiting review";
-                        review.push({reviewone: reviewdata});
+                        review.push({reviewone: reviewdata, jobid: jobid});
                         results.save();
                     }
                 }

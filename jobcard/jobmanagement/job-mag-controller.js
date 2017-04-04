@@ -23,11 +23,7 @@
                     return callback(error);
                 });
             }
-        }]).factory('shareDir',function(){
-        return{
-            
-        };
-    }) .controller('jobmanagement', ['$scope', 'jobMan', function($scope, jobMan){
+        }]).controller('jobmanagement', ['$scope','$interval', 'jobMan', function($scope,$interval, jobMan){
              if(localStorage['User-Data'] !== undefined){
             var user = JSON.parse(localStorage['User-Data']);
             $scope.dirdata = {};
@@ -40,15 +36,25 @@
                  };
                  
                  jobMan.getjob(request, function(results){
-                     console.log(results);
-                     if(results.data !== null){
+                     //console.log(results);
+                     if(results.data !== null || results.data !== undefined){
                          var card = results.data;
                          for(var i = 0; i < card.length; i++){
                              $scope.job_id = card[i]._id;
                              var boxcv = card[i].cvbox;
                              if(boxcv){
                                 $scope.stuffout = boxcv; 
-                                 console.log($scope.stuffout);
+                                 for(var i = 0; i < boxcv.length; i++){
+                                     console.log(boxcv[i].review);
+                                     var cvforr = boxcv[i].review;
+                                     if(cvforr){
+                                         for(var i = 0; i < cvforr.length; i++){
+                                        
+                                         $scope.stuffin = boxcv;
+                                         
+                                         }
+                                     }
+                                 }
                                 $scope.dropcvlength = boxcv.length;
                              }else{
                                  $scope.dropnull = false;
@@ -57,10 +63,10 @@
                      }
                  });
                  }
-                 
+               
                  
              }
-        }]).directive('showCard', ['jobMan','shareDir',function(service, shareDir){
+        }]).directive('showCard', ['jobMan',function(service){
         return{
             restrict: 'A',
             scope : {
@@ -81,13 +87,20 @@
                     service.reviewCheck(request, function(results){
                         if(results !== null || results !== undefined){
                             var cvdata = results.data.cvbox;
-                            console.log(results.data.cvbox);
+                            //console.log(results.data.cvbox);
                             for(var i = 0; i < cvdata.length; i++){
                                 if(cvowner == cvdata[i].userid){
                                     if(cvdata[i].review){
+                                        var review = cvdata[i].review;
+                                        for(var i =0; i < review.length; i++){
+                                            var con = review[i].jobid;
+                                            
                                        scope.savedcv = true;
-                                        shareDir.results = cvdata;
-                                        console.log(shareDir.results);
+                                       //scope.dirdata = cvdata;
+                                       console.log(cvdata);
+                                            
+                                        }
+                                       scope.$emit("cvdata", cvdata); 
                                     }
                                 }
                             }
@@ -95,34 +108,34 @@
                     });
                 }
                 scope.cvSave = function(){
-                 console.log("shit have just been clicked");
+                 //console.log("shit have just been clicked");
                  var request = {
                      cvdata : scope.applycard.userid,
                      job_id : scope.jobid
                  }
                  console.log(request);
                  service.cvreview(request, function(results){
-                     console.log(results);
+                     //console.log(results);
                      scope.savedcv = true;
                  });
                 }
                 
             }
         }
-    }]).directive('cvReview', ['shareDir',function(shareDir){
+    }]).directive('cvReview', ['jobMan',function(service){
         return {
             restrict : 'A',
+            //require : 'showCard',
             scope : {
-                reviewdata : '=',
-                items : '=',
-                dirdata : '='
+                cvs : '=',
+                jobid : '='
             },
             transclude : true,
             replace : true,
             templateUrl: 'jobcard/templates/dirtemplates/cvnxtstep.html',
             link : function(scope, element, attrs){
-                var cvreview = shareDir.results;
-                console.log(shareDir.results);
+                 
+               
             }
             
         }

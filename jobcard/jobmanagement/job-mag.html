@@ -4,7 +4,7 @@
     
    <div dir-paginate="applys in stuffout | itemsPerPage:3">
        
-    <div show-card applycard="applys" jobid="job_id" dirdata="job_id"></div>
+    <div show-card applycard="applys" jobid="job_id" ></div>
     
  </div>
     <dir-pagination-controls
@@ -16,5 +16,15 @@
 <div class="col-md-6 col-sm-6 col=xs-12">
     <br>
     <h3 class="text-center"><span class="glyphicon glyphicon-briefcase"></span></h3>
-    <div cv-review reviewdata="somestuff" items="othersomething" dirdata="job_id" ></div>
+   
+    <div dir-paginate="items in stuffin | itemsPerPage:3">
+       
+     <div cv-review cvs="items" jobid="job_id" ></div>
+    
+ </div>
+    <dir-pagination-controls
+    max-size="3"
+    direction-links="true"
+    boundary-links="true" >
+    </dir-pagination-controls>
 </div>
